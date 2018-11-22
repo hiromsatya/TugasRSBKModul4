@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>RSBK KELOMPOK 12</title>
+    </h:head>
+    <h:body>
+        
+        <center>
+            <h2>DAFTAR KULIAH</h2>
+            <h:form>
+            <h:dataTable value="#{kuliah.get_all_kuliah}" var="kul" width="800px">
+                <h:outputText value="#{kuliah.mata_kuliah}"/>
+                <h:column>
+                  <f:facet name="header"> ID </f:facet>
+                  <h:outputText value="#{kul.id_matkul}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">MATA KULIAH </f:facet>
+                 <h:outputText value="#{kul.mata_kuliah}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">NAMA DOSEN </f:facet>
+                 <h:outputText value="#{kul.nama_dosen}"></h:outputText>
+                </h:column>
+            </h:dataTable>
+            <br></br>
+            </h:form>
+            <h:form>
+                <h:form>
+                <h:commandButton value="Data Mata Kuliah" action="matkul.xhtml"></h:commandButton>
+                <h:commandButton value="Data Dosen" action="dosen.xhtml"></h:commandButton>
+                </h:form>
+            </h:form>
+        </center>
+    </h:body>
+</html>
+
+
+

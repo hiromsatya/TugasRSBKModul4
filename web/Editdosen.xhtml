@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+<title>RSBK KELOMPOK 12</title>
+</h:head>
+  <h:body>
+   <center>
+   <h:form>
+    <h1>EDIT DATA DOSEN</h1>
+    
+     <table>
+            <tr>
+               <td>NIP :</td>
+               <td><h:inputText value="#{Edit_dosen.nip}" required="true"></h:inputText></td>
+            </tr>
+            <tr>
+               <td>NAMA DOSEN :</td>
+               <td><h:inputText value="#{Edit_dosen.nama_dosen}" required="true"></h:inputText></td>
+            </tr>
+            <tr>
+               <td>ALAMAT :</td>
+               <td><h:inputText value="#{Edit_dosen.alamat}" required="true"></h:inputText></td>
+            </tr>
+     </table>
+    <br></br>
+    <h:commandButton value="Update" action="#{Edit_dosen.Update_dosen}">
+     <f:param name="Update_nip" value="#{Edit_dosen.nip}" /></h:commandButton>
+    <br></br>
+    <br></br>
+    </h:form>
+       <h:form>
+                   <h:commandButton value="Kembali" action="dosen.xhtml"></h:commandButton>
+       </h:form>
+       
+  </center>
+</h:body>
+</html>

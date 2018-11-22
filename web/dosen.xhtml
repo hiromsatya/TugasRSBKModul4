@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>RSBK KELOMPOK 12</title>
+    </h:head>
+    <h:body>
+        
+        <center>
+            <h2>DAFTAR DOSEN</h2>
+            <h:form>
+            <h:dataTable value="#{dosen.get_all_dosen}" var="dos" width="800px">
+                <h:outputText value="#{dos.nama_dosen}"/>
+                <h:column>
+                  <f:facet name="header"> NIP </f:facet>
+                  <h:outputText value="#{dos.nip}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header">NAMA DOSEN</f:facet>
+                 <h:outputText value="#{dos.nama_dosen}"></h:outputText>
+                </h:column>
+                <h:column>
+                  <f:facet name="header"> ALAMAT </f:facet>
+                 <h:outputText value="#{dos.alamat}"></h:outputText>
+                </h:column>
+                <h:column>
+                <f:facet name="header">Edit</f:facet>
+                    <h:commandButton value="Edit" action="#{dosen.Edit_dosen}"><f:param name="action" value="#{dos.nip}" /></h:commandButton>  
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Delete</f:facet>    
+                    <h:commandButton value="Delete" action="#{dosen.Delete_dosen}" onclick="return confirm('Beneran nih mau dihapus?')"> <f:param name="action" value="#{dos.nip}" /></h:commandButton>     
+                </h:column>
+            </h:dataTable>
+            <br></br>
+            </h:form>
+            <br></br>
+            <h:form>
+                <h:commandButton value="Tambahkan" action="Tambahdosen.xhtml" ></h:commandButton>
+                <h:commandButton value="Kembali" action="index.xhtml" ></h:commandButton>
+            </h:form>
+        </center>
+    </h:body>
+</html>
+
+
